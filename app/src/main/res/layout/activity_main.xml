@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6DF865"
+    android:orientation="vertical"
+    tools:context="com.kps.wificonnection.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorAccent"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/bOpenWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ButtonClick"
+            android:src="@drawable/wifi" />
+
+        <ImageButton
+            android:id="@+id/bSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ButtonClick"
+            android:src="@drawable/search" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--android:background="#B4A4F9"-->
+
+            <fragment
+                android:id="@+id/frag_list"
+                class="com.kps.wificonnection.DeviceListFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#80EDF2"
+                android:layout_weight="1"/>
+            <!-- Preview: layout=@layout/row_devices -->
+
+            <fragment
+                android:id="@+id/frag_detail"
+                class="com.kps.wificonnection.DeviceDetailFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </fragment>
+                <!-- Preview: layout=@layout/device_detail -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
